@@ -1,154 +1,225 @@
-🏦 Console Bank – Robust Banking Management System (Java)
+# 🏦 Console Bank – Banking Management System (Java)
 
-A cleanly architected, Java-based banking management system that simulates real-world banking operations through a command-line interface.
-This project focuses on transaction integrity, service-layer design, and efficient data handling, making it ideal for backend-oriented learning and interview preparation.
+## 📌 Overview
 
-📌 Overview
+**Console Bank** is a backend-focused banking management system built using **Core Java**, designed to simulate real-world banking operations via a command-line interface.
 
-Console Bank is a backend-focused application that allows users to manage bank accounts, perform secure financial transactions, and generate detailed transaction statements.
-The system follows a Service Layer Architecture, ensuring that business logic remains independent of the user interface.
+This project emphasizes:
 
-This project demonstrates core Java expertise, proper object-oriented design, and practical handling of real banking scenarios.
+* Clean architecture (Service Layer Pattern)
+* Transaction integrity
+* Scalable and maintainable backend design
 
-✨ Key Features
+💡 It is ideal for **backend learning, system design understanding, and interview preparation**.
 
-🔐 Account Management
+---
 
-* Create Savings and Current accounts
-* Auto-generated unique account numbers
-* Maintain real-time account balance and owner details
+## ✨ Key Features
 
-💰 Secure Financial Transactions
+### 🔐 Account Management
 
-* Deposit and Withdraw money with validations
-* Prevents invalid amounts and insufficient balance operations
-* Immediate balance updates after every transaction
+* Create **Savings** and **Current** accounts
+* Auto-generate unique account numbers
+* Maintain real-time balance and account details
 
-🔄 Inter-Account Fund Transfer
+---
 
-* Seamless money transfer between two accounts
-* Atomic-style transaction handling to ensure:
+### 💰 Secure Financial Transactions
+
+* Deposit and Withdraw with proper validations
+* Prevents:
+
+  * Invalid amounts
+  * Insufficient balance
+* Instant balance updates
+
+---
+
+### 🔄 Fund Transfer (Atomic Transactions)
+
+* Transfer money between accounts
+* Ensures:
 
   * No partial transfers
-  * No loss of money in failure scenarios
+  * No money loss in failure scenarios
 
-🧾 Digital Transaction Statements
+---
 
-* Complete transaction history per account
-* Includes:
+### 🧾 Transaction Statements
 
-  * Transaction ID
-  * Timestamp
-  * Amount
-  * Transaction type (Deposit / Withdraw / Transfer)
-  * Optional transaction notes
+* Full transaction history per account
 
-🔍 Search & Account Directory
+Includes:
+
+* Transaction ID
+* Timestamp
+* Amount
+* Type (Deposit / Withdraw / Transfer)
+* Notes
+
+---
+
+### 🔍 Search & Account Directory
 
 * Search accounts by customer name
-* View complete bank account list
-* Implemented using Java Stream API for cleaner and efficient filtering
+* View all accounts
+* Implemented using **Java Stream API**
 
-⚠️ Robust Input Validation
+---
 
-* Handles:
+### ⚠️ Input Validation
 
-  * Invalid account numbers
-  * Negative or zero transaction amounts
-  * Insufficient balance
-* Uses clear error messages for better user experience
+Handles:
 
-🛠 Technology Stack
+* Invalid account numbers
+* Negative or zero amounts
+* Insufficient balance
 
-| Category      | Technology                     |
-| ------------- | ------------------------------ |
-| Language      | Java (JDK 17+)                 |
-| Architecture  | Service Layer Pattern          |
-| Data Handling | Java Collections Framework     |
-| Searching     | Java Stream API                |
-| UI            | Console-based formatted output |
+✔ Provides clear error messages
 
-🧠 Architecture Design
+---
 
-The project follows a layered architecture to improve maintainability and scalability:
+## 🛠 Tech Stack
 
+| Category      | Technology            |
+| ------------- | --------------------- |
+| Language      | Java (JDK 17+)        |
+| Architecture  | Service Layer Pattern |
+| Data Handling | Java Collections      |
+| Searching     | Java Stream API       |
+| UI            | Console-based         |
+
+---
+
+## 🧠 Architecture
+
+The project follows a **layered architecture**:
+
+```id="q3xw8y"
 Presentation Layer → Service Layer → Domain Layer
-
-📂 Project Structure
-
 ```
+
+### 📌 Explanation
+
+* **Presentation Layer** → Handles user input/output
+* **Service Layer** → Contains business logic
+* **Domain Layer** → Defines entities (Account, Transaction)
+
+---
+
+## 📂 Project Structure
+
+```id="s5pld2"
 bank-app/
 └── src/
     ├── app/
-    │   └── Main.java              # Console UI & user interaction
+    │   └── Main.java
     ├── domain/
-    │   ├── Account.java           # Account entity
-    │   └── Transaction.java       # Transaction entity
+    │   ├── Account.java
+    │   └── Transaction.java
     └── service/
-        ├── BankService.java       # Business rules interface
-        └── BankServiceImpl.java   # Core banking logic implementation
+        ├── BankService.java
+        └── BankServiceImpl.java
 ```
 
-🧩 Core Design Highlights
+---
 
-✅ Service Layer Pattern
+## 🧩 Core Design Highlights
 
-* Main.java handles only user input/output
-* All business logic is abstracted inside BankService
-* Promotes:
+### ✅ Service Layer Pattern
 
-  * Clean code
-  * Easier testing
-  * Better scalability
+* Separates UI from business logic
+* Improves:
 
-✅ Transaction Integrity
+  * Maintainability
+  * Testability
+  * Scalability
 
-* Transfer operation is treated as a single logical unit
-* Ensures both withdrawal and deposit succeed together
-* Prevents inconsistent system states
+---
 
-✅ Stream-Based Searching
+### ✅ Transaction Integrity
 
-* Uses Java Stream API to dynamically filter accounts
-* Improves code readability and performance
+* Transfer is treated as a single unit
+* Ensures consistency in all scenarios
 
-💻 Real-World Use Cases
+---
 
-* Banking Clerk Operations
+### ✅ Stream-Based Searching
 
-  * Account lookup, balance inquiry, transaction history access
-* Personal Finance Management
+* Uses Java Streams for filtering
+* Cleaner and more readable code
 
-  * Track income, expenses, and transfers
-* Peer-to-Peer Transfers
+---
 
-  * Move funds securely between accounts
+## 💻 Real-World Use Cases
 
-🚀 Learning Outcomes
+* 🏦 Banking operations simulation
+* 💳 Personal finance tracking
+* 🔄 Secure peer-to-peer transfers
 
-* Deep understanding of Java OOP concepts
-* Practical implementation of clean architecture
+---
+
+## 🚀 Learning Outcomes
+
+* Strong understanding of **Core Java & OOP**
+
 * Hands-on experience with:
 
   * Collections
   * Streams
-  * Exception handling
-  * Transaction flow control
-* Improved ability to design real-world backend systems
+  * Exception Handling
+  * Transaction flow
 
-🔮 Future Enhancements
+* Ability to design **real-world backend systems**
 
-* JDBC + MySQL database integration
-* User authentication with PIN/password
-* Export transaction statements (PDF / CSV)
-* REST API version using Spring Boot
+---
+
+## 🔮 Future Enhancements
+
+* JDBC + MySQL integration
+* Authentication (PIN / Password)
+* Export statements (PDF / CSV)
+* REST API using Spring Boot
 * Unit testing with JUnit
 
-📎 Why This Project Matters
+---
 
-* Reflects industry-level backend thinking by focusing on:
+## 📎 Why This Project Matters
 
-  * Data consistency
-  * Business rule separation
-  * Maintainable code structure
-  * Real-world problem solving
+This project reflects **industry-level backend thinking**:
+
+✔ Data consistency
+✔ Clean architecture
+✔ Business logic separation
+✔ Real-world problem solving
+
+---
+
+## ▶️ How to Run
+
+```bash id="dr4w7k"
+# Compile
+javac Main.java
+
+# Run
+java Main
+```
+
+---
+
+## 🤝 Connect With Me
+
+* 📧 Email: [somildhakad500@gmail.com](mailto:somildhakad500@gmail.com)
+* 💼 LinkedIn: https://www.linkedin.com/in/somil-kirar/
+
+---
+
+## ⭐ Support
+
+If you like this project, please ⭐ the repository!
+
+---
+
+## 🔥 Author
+
+**Somil Kirar**
